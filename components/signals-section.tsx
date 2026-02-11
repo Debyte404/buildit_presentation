@@ -8,6 +8,7 @@ import { useRef, useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,33 +16,33 @@ gsap.registerPlugin(ScrollTrigger)
 const signals = [
   {
     date: "",
-    title: "Learning Without Doing",
-    note: "Students watch hours of tutorials but freeze the moment they have to build something on their own.",
+    title: "Uncertain Wait Times",
+    note: "Students and employees lack real-time info, resulting in long waits and anxiety at bus stops.",
   },
   {
     date: "",
-    title: "Tutorial Hell Is the New Degree",
-    note: "Most learners collect courses instead of skills, mistaking progress for productivity.",
+    title: "Static Schedules Fail",
+    note: "Existing printed schedules do not account for real-world traffic, weather, or unexpected delays.",
   },
   {
     date: "",
-    title: "Resumes Lie, Code Doesn't",
-    note: "Anyone can write \"proficient in X,\" but very few can actually prove it.",
+    title: "Overcrowding Surprises",
+    note: "Passengers have no way of knowing if the approaching bus is already full until it arrives.",
   },
   {
     date: "",
-    title: "Mentorship Is Either Missing or Useless",
-    note: "Students either get no guidance or get spoon-fed without real learning.",
+    title: "Missed Rides",
+    note: "Lack of visibility frequently leads to missed connections and late arrivals to class or work.",
   },
   {
     date: "",
-    title: "Hiring Is a Guessing Game",
-    note: "Companies are forced to trust resumes and interviews instead of real work.",
+    title: "Inefficient Operations",
+    note: "Transport admins lack data on delays and usage, preventing effective route optimization.",
   },
   {
     date: "",
-    title: "Talent Exists, Direction Doesn't",
-    note: "Capable students and graduates have skills—but no clear path to apply or showcase them.",
+    title: "Poor Commute Experience",
+    note: "The overall uncertainty turns what should be a simple commute into a daily source of stress.",
   },
 ]
 
@@ -53,6 +54,16 @@ export function SignalsSection() {
   const cursorRef = useRef<HTMLDivElement>(null)
   /** useState: when this changes, React re-renders and the cursor dot shows/hides. */
   const [isHovering, setIsHovering] = useState(false)
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = 400
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      })
+    }
+  }
 
   /**
    * First useEffect: custom cursor. When the mouse moves over this section we move a
@@ -156,11 +167,31 @@ export function SignalsSection() {
       />
 
       {/* Section header — ref used by GSAP for the slide-in animation. */}
-      <div ref={headerRef} className="mb-16 pr-6 md:pr-12">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">01 / PROBLEM IDENTIFICATION</span>
-        <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">
-          <span className="text-red-500">PROBLEMS</span> BEING ADDRESSED
-        </h2>
+      <div ref={headerRef} className="mb-16 pr-6 md:pr-12 flex items-end justify-between">
+        <div>
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">01 / PROBLEM IDENTIFICATION</span>
+          <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">
+            <span className="text-red-500">PROBLEMS</span> BEING ADDRESSED
+          </h2>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="hidden md:flex gap-4 pb-2">
+          <button
+            onClick={() => scroll("left")}
+            className="p-3 border border-foreground/20 hover:border-accent hover:text-accent transition-all duration-300 rounded-full group"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="p-3 border border-foreground/20 hover:border-accent hover:text-accent transition-all duration-300 rounded-full group"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
+          </button>
+        </div>
       </div>
 
       {/* Horizontal scroll container — same div is used as scrollRef and cardsRef so we can animate the cards. */}

@@ -17,18 +17,18 @@ const leanCanvasSections = [
       {
         title: "Top 3 Problems:",
         points: [
-          "Students watch hours of tutorials but freeze when building independently",
-          "Most learners collect courses instead of skills, mistaking progress for productivity",
-          "Anyone can write 'proficient in X,' but very few can actually prove it",
+          "Uncertain wait times leading to anxiety",
+          "Static schedules don't reflect real-world traffic",
+          "Overcrowding surprises at the bus stop",
         ],
       },
       {
         title: "Existing Alternatives:",
         points: [
-          "Online courses (Udemy, Coursera)",
-          "Tutorial videos (YouTube, freeCodeCamp)",
-          "Bootcamps",
-          "University degrees",
+          "WhatsApp groups for updates",
+          "Calling drivers directly",
+          "Waiting blindly at stops",
+          "Static printed timetables",
         ],
       },
     ],
@@ -40,9 +40,9 @@ const leanCanvasSections = [
       {
         title: "Top 3 Features:",
         points: [
-          "Project-based learning with real-world projects",
-          "Mentor-guided development and code reviews",
-          "Verified portfolio generation from actual contributions",
+          "Real-time driver GPS tracking",
+          "Live ETA and status updates",
+          "Crowd density indicators",
         ],
       },
     ],
@@ -54,13 +54,13 @@ const leanCanvasSections = [
       {
         title: "",
         points: [
-          "Build Skills. Build Projects. Build Proof.",
-          "Learn by doing, not just watching",
-          "Verified skills through real project contributions",
+          "Real-time shuttle visibility for smarter commuting",
+          "Know exactly when to leave for the stop",
+          "Zero hardware implementation (Driver App)",
           "Why this matters:",
-          "Portfolio > Resume",
-          "Code doesn't lie",
-          "Emotional benefit: Confidence through proof",
+          "Reduces wait time",
+          "Eliminates uncertainty",
+          "Improves daily productivity",
         ],
       },
     ],
@@ -72,10 +72,10 @@ const leanCanvasSections = [
       {
         title: "",
         points: [
-          "Two-sided network: Students + Mentors + Recruiters",
-          "GitHub-based verification system",
-          "Real project portfolio generation",
-          "Direct path from learning to hiring",
+          "No expensive GPS hardware required",
+          "Works with existing driver smartphones",
+          "Privacy-first 'On-Duty' logic",
+          "Rapid deployment in campuses",
         ],
       },
     ],
@@ -87,19 +87,17 @@ const leanCanvasSections = [
       {
         title: "Target Customers:",
         points: [
-          "Computer science students",
-          "Career switchers",
-          "Self-taught developers",
-          "Recent graduates",
+          "University Students & Faculty",
+          "Corporate Employees",
+          "Transport Administrators",
         ],
       },
       {
         title: "Early Adopters:",
         points: [
-          "Students at MUJ (Manipal University Jaipur)",
-          "TechStar SWJ'26 participants",
-          "Active GitHub users",
-          "People already building side projects",
+          "Campus transport committees",
+          "Tech-savvy commuter students",
+          "Office admin teams",
         ],
       },
     ],
@@ -111,12 +109,11 @@ const leanCanvasSections = [
       {
         title: "",
         points: [
-          "Projects completed per student",
-          "Code contributions per project",
-          "Mentor review response time",
-          "Student retention rate",
-          "Portfolio views by recruiters",
-          "Job placement rate",
+          "Daily Active Users (DAU)",
+          "Tracking uptime percentage",
+          "Average wait time reduction",
+          "Passenger satisfaction score",
+          "Number of tracked trips",
         ],
       },
     ],
@@ -128,11 +125,10 @@ const leanCanvasSections = [
       {
         title: "Path to Customers:",
         points: [
-          "University partnerships (starting with MUJ)",
-          "TechStar program integration",
-          "Word of mouth from early adopters",
-          "GitHub community engagement",
-          "Tech community events and hackathons",
+          "University administration partnerships",
+          "Student council endorsements",
+          "QR codes at bus stops",
+          "Corporate HR departments",
         ],
       },
     ],
@@ -144,11 +140,10 @@ const leanCanvasSections = [
       {
         title: "",
         points: [
-          "Platform development and maintenance",
-          "Mentor compensation",
-          "Payment processing fees",
-          "Customer support",
-          "Marketing and partnerships",
+          "Server & Map API costs",
+          "App development & maintenance",
+          "Marketing materials",
+          "Sales & onboarding",
         ],
       },
     ],
@@ -160,14 +155,10 @@ const leanCanvasSections = [
       {
         title: "",
         points: [
-          "Project-based commission from enrollment fees",
-          "Pro subscription (AI-powered features)",
-          "Paid mentorship support",
-          "Micro-revenue streams (certifications, premium tools)",
-          "Key Numbers:",
-          "Revenue per project enrollment",
-          "Gross margin per subscription",
-          "Lifetime value of active learners",
+          "B2B SaaS Subscription (Colleges/Offices)",
+          "Premium Analytics for Admins",
+          "White-label licensing",
+          "Future: Hardware integration fees",
         ],
       },
     ],
@@ -260,6 +251,7 @@ export function LeanCanvasSection() {
           <div
             className="relative w-full max-w-4xl max-h-[90vh] overflow-auto bg-card border border-border/50 rounded-lg p-6 md:p-12 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
+            data-lenis-prevent
           >
             <button
               onClick={handleCloseExpanded}
@@ -315,6 +307,7 @@ export function LeanCanvasSection() {
       <div
         ref={gridRef}
         className="flex-1 max-w-full mx-auto grid grid-cols-1 md:grid-cols-5 gap-2 md:gap-3 border border-border/30 bg-background p-2 md:p-3 overflow-y-auto md:overflow-auto"
+        data-lenis-prevent
         style={{
           backgroundImage: `
             linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
