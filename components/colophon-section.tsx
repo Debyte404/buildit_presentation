@@ -95,7 +95,8 @@ export function ColophonSection() {
         <div className="col-span-1">
           <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Team</h4>
           <ul className="space-y-2">
-            <li className="font-mono text-xs text-foreground/80">joe doe</li>
+            <li className="font-mono text-xs text-foreground/80">Ankit Chetri (Team Leader)</li>
+            <li className="font-mono text-xs text-foreground/80">Shreya Mishra</li>
           </ul>
         </div>
 
@@ -108,13 +109,13 @@ export function ColophonSection() {
         </div>
 
         {/* Special Thanks — mentors, professors, facilitators. */}
-        <div className="col-span-1">
+        {/* <div className="col-span-1">
           <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">SPECIAL THANKS TO</h4>
           <ul className="space-y-2">
             <li className="font-mono text-xs text-foreground/80">Professor X</li>
             <li className="font-mono text-[8px] uppercase tracking-[0.2em] text-muted-foreground/60 mt-2">meet a professor for ideation (mandatory)</li>
           </ul>
-        </div>
+        </div> */}
       </div>
 
       {/* Bottom copyright — change the text to your team name and tagline. */}
@@ -123,20 +124,20 @@ export function ColophonSection() {
         className="mt-24 pt-8 border-t border-border/20 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
       >
         <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
-          FANTASTIC 4 KICKOFF
+          STEELPATH KICKOFF
         </p>
-        <p className="font-mono text-[10px] text-muted-foreground">lets BUILDIT</p>
+        <p className="font-mono text-[10px] text-muted-foreground">STEELPATH</p>
       </div>
 
       {/* Feedback Form — replace the href with your actual form link and the label with something like "Give feedback". */}
       <div className="mt-12 text-center">
         <a
-          href="https://forms.gle/aiyJBKZ4ZMV4EJqS8"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSe46PtUdeUlbA3xYQM_vQie2qsYQ0gMf3Qh5AaXQaaDSM-PYQ/viewform"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block font-mono text-sm text-foreground hover:text-accent transition-colors duration-200 border border-border/40 px-6 py-3 hover:border-accent"
         >
-          add a form in this button.
+          Give us feedback
         </a>
       </div>
     </section>

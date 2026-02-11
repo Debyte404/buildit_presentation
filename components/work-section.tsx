@@ -15,51 +15,51 @@ gsap.registerPlugin(ScrollTrigger)
 /** Your solution steps. "span" controls grid cell size (e.g. col-span-2 row-span-2 for a big card). */
 const experiments = [
   {
-    title: "Project Posted",
+    title: "Driver Toggles On-Duty",
     medium: "Step 1",
-    description: "Experienced developers publish real-world project ideas with clear objectives.",
+    description: "Driver activates the app at the start of their shift to begin secure GPS tracking.",
     span: "col-span-2 row-span-2",
   },
   {
-    title: "Learner Joins",
+    title: "Real-Time Location",
     medium: "Step 2",
-    description: "Students enroll in a project based on their interest and skill level.",
+    description: "Passengers constantly see the bus's live location on the map.",
     span: "col-span-1 row-span-1",
   },
   {
-    title: "Learning Path Assigned",
+    title: "ETA & Status",
     medium: "Step 3",
-    description: "A structured roadmap is provided to guide what needs to be learned and built.",
+    description: "Dynamic ETA updates based on traffic and distance to the next stop.",
     span: "col-span-1 row-span-2",
   },
   {
-    title: "Project Development",
+    title: "Crowd Levels",
     medium: "Step 4",
-    description: "Learners work on tasks by writing and implementing code themselves.",
+    description: "Passengers can see if the bus is crowded before it arrives.",
     span: "col-span-1 row-span-1",
   },
   {
-    title: "Guidance & Review",
+    title: "Notifications",
     medium: "Step 5",
-    description: "Seniors review progress and provide direction where required.",
+    description: "Users get alerted when the bus is approaching their favorite stops.",
     span: "col-span-2 row-span-1",
   },
   {
-    title: "Skill Validation",
+    title: "Admin Insights",
     medium: "Step 6",
-    description: "Skills are evaluated based on actual project contributions.",
+    description: "Institutions get data on delays, route usage, and driver performance.",
     span: "col-span-1 row-span-1",
   },
   {
-    title: "Portfolio Creation",
+    title: "Feedback Loop",
     medium: "Step 7",
-    description: "Completed work is added as verified project experience.",
+    description: "Passengers can rate rides and report issues directly in the app.",
     span: "col-span-1 row-span-1",
   },
   {
-    title: "Growth & Opportunities",
+    title: "Smarter Commute",
     medium: "Step 8",
-    description: "Skilled users unlock advanced projects and career opportunities.",
+    description: "Faster, more predictable, and stress-free travel for everyone.",
     span: "col-span-1 row-span-1",
   },
 ]
@@ -196,11 +196,11 @@ export function WorkSection() {
         <div>
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">02 / SOLUTION</span>
           <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">
-            WHAT WE BELIEVE WOULD <span className="text-accent">SOLVE</span> THESE <span className="text-red-500">PROBLEMS</span>
+            HOW <span className="text-accent">STEELPATH</span> SOLVES THE <span className="text-red-500">COMMUTE CRISIS</span>
           </h2>
         </div>
         <p className="hidden md:block max-w-xs font-mono text-xs text-muted-foreground text-right leading-relaxed">
-          after 12 hours of intense thoughtprocess
+          A seamless flow for passengers and drivers
         </p>
       </div>
 

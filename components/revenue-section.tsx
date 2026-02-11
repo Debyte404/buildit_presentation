@@ -9,26 +9,27 @@ import { useRef, useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 gsap.registerPlugin(ScrollTrigger)
 
 /** Your revenue ideas. Each item becomes one card in the horizontal scroll. */
 const revenueModels = [
   {
-    title: "Project-Based Commission",
-    description: "The platform earns a commission from the project enrollment fee paid by learners.",
+    title: "B2B SaaS Subscription",
+    description: "Colleges and offices pay a recurring subscription fee for the platform.",
   },
   {
-    title: "Pro Subscription (AI-Powered Features)",
-    description: "Users can upgrade to a premium plan to access AI-assisted learning tools, code insights, and progress analytics.",
+    title: "Hardware Integration",
+    description: "Premium tier including dedicated GPS hardware for higher accuracy and reliability.",
   },
   {
-    title: "Paid Mentorship Support",
-    description: "Learners can opt for additional one-on-one or on-demand mentor assistance for specific technical challenges.",
+    title: "Analytics Dashboard",
+    description: "Paid access to advanced reporting and route optimization insights for transport admins.",
   },
   {
-    title: "Micro-Revenue Streams",
-    description: "Small-value earnings generated through add-ons such as certifications, advanced project access, and premium learning tools.",
+    title: "White Labeling",
+    description: "Custom branding and domain options for large institutions and transport fleets.",
   },
 ]
 
@@ -40,6 +41,16 @@ export function RevenueSection() {
   const cursorRef = useRef<HTMLDivElement>(null)
   /** Tracks whether the mouse is over this section so we show/hide the follow cursor. */
   const [isHovering, setIsHovering] = useState(false)
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = 400
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      })
+    }
+  }
 
   /** Custom cursor: a dot that follows the mouse inside this section. Same idea as SignalsSection. */
   useEffect(() => {
@@ -135,11 +146,31 @@ export function RevenueSection() {
       />
 
       {/* Section header — id="revenue" is used by the side nav. */}
-      <div ref={headerRef} className="mb-16 pr-6 md:pr-12">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">04 / Revenue</span>
-        <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">
-          <span className="text-accent">REVENUE</span> MODEL
-        </h2>
+      <div ref={headerRef} className="mb-16 pr-6 md:pr-12 flex items-end justify-between">
+        <div>
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">04 / Revenue</span>
+          <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">
+            <span className="text-accent">REVENUE</span> MODEL
+          </h2>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="hidden md:flex gap-4 pb-2">
+          <button
+            onClick={() => scroll("left")}
+            className="p-3 border border-foreground/20 hover:border-accent hover:text-accent transition-all duration-300 rounded-full group"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="p-3 border border-foreground/20 hover:border-accent hover:text-accent transition-all duration-300 rounded-full group"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
+          </button>
+        </div>
       </div>
 
       {/* Horizontal scroll — one ref holds both scrollRef and cardsRef for animation targets. */}
