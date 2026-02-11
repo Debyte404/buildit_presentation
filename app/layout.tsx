@@ -18,9 +18,12 @@ const ibmPlexMono = IBM_Plex_Mono({
 const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"], variable: "--font-bebas" })
 
 export const metadata: Metadata = {
-  title: "BUILDIT — Build Skills. Build Projects. Build Proof.",
+  title: "STEELPATH | Real-time Shuttle Visibility",
   description:
-    "Template: tinker and change texts as per your project. Includes problems, solution, project review video, MVP (at least 4), revenue model, credits, and feedback form.",
+    "Real-time shuttle tracking platform for colleges and offices. Live location, ETA updates, and crowd-level indicators.",
+  icons: {
+    icon: "/logo.png",
+  },
 }
 
 export default function RootLayout({
