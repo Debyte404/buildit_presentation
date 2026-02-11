@@ -68,18 +68,25 @@ export function VideoSection() {
       {/* Instructional text — you can change or remove this. */}
       <div className="mb-10 pr-6 md:pr-12 max-w-3xl">
         <p className="font-mono text-sm text-muted-foreground leading-relaxed">
-          Make a video asking review of your project—how it is helpful to your customer who could use it, or in general to your friends. Take feedbacks and add it in your video.
+          Check out what users are saying about STEELPATH.
         </p>
       </div>
 
       {/* Video placeholder — replace this whole div with an <iframe> when you have your video embed URL. */}
       <div
         ref={videoWrapperRef}
-        className="relative w-full max-w-4xl pr-6 md:pr-12 aspect-video bg-card border border-border/50 flex items-center justify-center"
+        className="relative w-full max-w-sm mx-auto aspect-[9/16] bg-card border border-border/50 flex items-center justify-center overflow-hidden shadow-2xl"
       >
-        <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-          Video placeholder — add your review video embed URL here
-        </p>
+        <iframe 
+          width="100%" 
+          height="100%" 
+          src="https://www.youtube.com/embed/Fgsn8hzs7uc" 
+          title="STEELPATH Review" 
+          frameBorder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerPolicy="strict-origin-when-cross-origin" 
+          allowFullScreen
+        ></iframe>
       </div>
     </section>
   )
